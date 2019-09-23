@@ -1,0 +1,14 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: slow
+provisioner: kubernetes.io/glusterfs
+parameters:
+  resturl: "https://gluster1.fengdu.cloud"
+  clusterid: "8283b19a328b370f08794cbcdffa6a07"
+  restuser: "admin"
+  secretNamespace: "default"
+  secretName: "heketi-secret"
+  gidMin: "40000"
+  gidMax: "50000"
+  volumetype: "replicate:3"
